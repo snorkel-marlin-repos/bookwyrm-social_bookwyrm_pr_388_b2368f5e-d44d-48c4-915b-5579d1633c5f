@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% load bookwyrm_tags %}
+{% block content %}
+<div class="block">
+    <h1 class="title">{{ author.name }}</h1>
+
+    {% if author.bio %}
+    <p>
+        {{ author.bio }}
+    </p>
+    {% endif %}
+</div>
+
+<div class="block">
+    <h3 class="title is-4">Books by {{ author.name }}</h3>
+    {% include 'snippets/book_tiles.html' with books=books %}
+</div>
+{% endblock %}
+
